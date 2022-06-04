@@ -1,7 +1,5 @@
 package main
 
-import "github.com/CoderSamYhc/learngo/day_one"
-
 func main() {
 
 	/* 指针
@@ -40,8 +38,12 @@ func main() {
 	s.ReSlice()
 	*/
 
-	var s = day_one.SliceOps{}
-	//s.Add()
-	s.Create()
+	/* 切片例题
+		var s = day_one.SliceOps{}
+		s.Add()
+		s.Create()
+		s.Copy()
+		s.Delete()
+	*/
 
 }

@@ -23,10 +23,36 @@ func (s *SliceOps) Add() {
 }
 
 func (s *SliceOps) Create() {
-	var slice []int // zero value for slice is nil；
-	for i := 0; i < 100; i++ {
-		fmt.Printf("len = %v, cap = %v \n", len(slice), cap(slice))
-		slice = append(slice, i)
-	}
-	fmt.Println(slice)
+	//var slice []int // zero value for slice is nil；
+	//for i := 0; i < 100; i++ {
+	//	fmt.Printf("len = %v, cap = %v \n", len(slice), cap(slice))
+	//	slice = append(slice, i)
+	//}
+	//fmt.Println(slice)
+
+	// make([]int, len, cap)
+	s1 := make([]int, 10)
+	s2 := make([]int, 16, 32)
+	printSlice(s1)
+	printSlice(s2)
+}
+
+func (s *SliceOps) Copy() {
+	s1 := []int{4,3,2,1}
+	s2 := make([]int, 10)
+	copy(s2, s1)
+	printSlice(s2)
+}
+
+func (s *SliceOps) Delete() {
+	s1 := []int{4,3,2,1}
+	s2 := make([]int, 10)
+	copy(s2, s1)
+	printSlice(s2)
+	s2 = append(s2[:3], s2[4:]...)
+	printSlice(s2)
+}
+
+func printSlice(s []int) {
+	fmt.Printf("val = %v, len = %v, cap = %v \n",s, len(s), cap(s))
 }
