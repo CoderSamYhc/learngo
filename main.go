@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"github.com/CoderSamYhc/learngo/day_one"
+)
+
 func main() {
 
 	/* 指针
@@ -45,5 +50,9 @@ func main() {
 		s.Copy()
 		s.Delete()
 	*/
+
+	var m  = day_one.Map{}
+	m.Create()
+	fmt.Println(m.FindLongNoRepeatSubStr("bcbac"))
 
 }
