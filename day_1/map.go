@@ -1,4 +1,4 @@
-package day_one
+package day_1
 
 import "fmt"
 
@@ -23,9 +23,9 @@ func (m *Map) Create() {
 
 
 func (m *Map) FindLongNoRepeatSubStr(s string) int {
-	lastOcrrred := make(map[byte]int)
+	lastOcrrred := make(map[rune]int)
 	start, maxLenth := 0, 0
-	for i, v := range []byte(s) {
+	for i, v := range []rune(s) {
 		if lastI, ok := lastOcrrred[v]; ok && lastI >= start {
 			start = lastI + 1
 		}

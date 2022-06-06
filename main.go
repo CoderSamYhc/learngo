@@ -1,14 +1,11 @@
 package main
 
-import (
-	"fmt"
-	"github.com/CoderSamYhc/learngo/day_one"
-)
+import "github.com/CoderSamYhc/learngo/day_2"
 
 func main() {
 
 	/* 指针
-	var p = day_one.Point{}
+	var p = day_1.Point{}
 	p.Point()
 	var val = 2
 	p.PassByVal(val)
@@ -24,7 +21,7 @@ func main() {
 	*/
 
 	/* 数组
-		var arr = day_one.Array{}
+		var arr = day_1.Array{}
 		arr.MakeArr()
 
 		eachArr := [...]int{1, 3, 4, 5, 9}
@@ -33,7 +30,7 @@ func main() {
 	*/
 
 	/* 切片
-	var s = day_one.Slice{}
+	var s = day_1.Slice{}
 	s.MakeSlice()
 
 	var arr = [...]int{0, 1, 2, 3, 4, 5, 6, 7}
@@ -44,15 +41,27 @@ func main() {
 	*/
 
 	/* 切片例题
-		var s = day_one.SliceOps{}
+		var s = day_1.SliceOps{}
 		s.Add()
 		s.Create()
 		s.Copy()
 		s.Delete()
 	*/
+	/* map
+		var m  = day_1.Map{}
+		m.Create()
+		fmt.Println(m.FindLongNoRepeatSubStr("bcbac"))
+		fmt.Println(m.FindLongNoRepeatSubStr("我我妮妮"))
+	*/
 
-	var m  = day_one.Map{}
-	m.Create()
-	fmt.Println(m.FindLongNoRepeatSubStr("bcbac"))
+	var duck day_2.Bird
+	duck = &day_2.Duck{}
+	duck.SetName("大黄鸭")
+	duck.Call()
+
+	var tiger day_2.Catamount
+	tiger = &day_2.Tiger{}
+	tiger.SetName("花老虎")
+	tiger.Eating(duck.GetName())
 
 }
