@@ -1,6 +1,6 @@
 package main
 
-import "github.com/CoderSamYhc/learngo/day_2"
+import "fmt"
 
 func main() {
 
@@ -54,6 +54,7 @@ func main() {
 		fmt.Println(m.FindLongNoRepeatSubStr("我我妮妮"))
 	*/
 
+	/*
 	var duck day_2.Bird
 	duck = &day_2.Duck{}
 	duck.SetName("大黄鸭")
@@ -63,5 +64,18 @@ func main() {
 	tiger = &day_2.Tiger{}
 	tiger.SetName("花老虎")
 	tiger.Eating(duck.GetName())
+	*/
 
+	//var wg sync.WaitGroup
+	//
+	//t := day_3.Total{}
+	//wg.Add(2)
+	//go t.Worker(&wg)
+	//go t.Worker(&wg)
+	//
+	//wg.Wait()
+	//fmt.Println(t.Value)
+
+	var m1 map[string]string
+	fmt.Println(m1)
 }
