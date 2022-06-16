@@ -76,6 +76,14 @@ func main() {
 	//wg.Wait()
 	//fmt.Println(t.Value)
 
-	var m1 map[string]string
-	fmt.Println(m1)
+	//var m1 map[string]string
+	//fmt.Println(m1)
+
+	defer func() {
+		fmt.Println("defer111")
+	}()
+
+	defer func() {
+		fmt.Println("defer222")
+	}()
 }
