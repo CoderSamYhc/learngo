@@ -1,17 +1,24 @@
 package day_3
 
-import "sync"
+import "time"
 
-type Total struct {
-	sync.Mutex
-	Value int
+var c int
+func test() int {
+	c++
+	return c
 }
 
-func (t *Total) Worker(wg *sync.WaitGroup) {
-	defer wg.Done()
-	for i := 0; i <= 100; i++ {
-		t.Lock()
-		t.Value += 1
-		t.Unlock()
-	}
+// 延时执行
+func Do() {
+	a := 100
+
+	go func(x, y int) {
+		time.Sleep(time.Second)
+		println(x, y)
+	}(a, test())
+
+	a += 100
+	println("do:", a, test())
+	time.Sleep(time.Second * 3)
+
 }

@@ -1,6 +1,6 @@
 package main
 
-import "fmt"
+import "github.com/CoderSamYhc/learngo/day_3"
 
 func main() {
 
@@ -79,11 +79,7 @@ func main() {
 	//var m1 map[string]string
 	//fmt.Println(m1)
 
-	defer func() {
-		fmt.Println("defer111")
-	}()
+	//day_3.Do()
 
-	defer func() {
-		fmt.Println("defer222")
-	}()
+	day_3.TestFunc2()
 }
