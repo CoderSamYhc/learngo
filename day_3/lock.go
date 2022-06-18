@@ -33,7 +33,7 @@ func TestFunc() {
 			Id int
 			Result int
 		}
-		Lock sync.Mutex
+		Lock sync.RWMutex
 	}
 
 	m := demoMap{

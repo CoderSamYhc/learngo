@@ -30,6 +30,7 @@
 
 ## DAY2
 - [X] 包
+  - 初始化顺序：main->import pkg->const->var->init() 返回main->const->var->init()->mian()
 - [X] 接口
 - [X] 接口拓展
 

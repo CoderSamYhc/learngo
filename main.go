@@ -1,6 +1,10 @@
 package main
 
-import "github.com/CoderSamYhc/learngo/day_3"
+import (
+	"github.com/CoderSamYhc/learngo/day_3/ops"
+	"strings"
+	"time"
+)
 
 func main() {
 
@@ -81,5 +85,34 @@ func main() {
 
 	//day_3.Do()
 
-	day_3.TestFunc2()
+	//day_3.TestFunc3()
+
+	p := ops.NewPublisher(100*time.Millisecond, 10)
+
+	defer p.Close()
+
+	all := p.Subscriber()
+	golang := p.SubscriberTopic(func(v interface{}) bool {
+		if s, ok := v.(string); ok {
+			return strings.Contains(s, "golang")
+		}
+		return false
+	})
+
+	p.Publish("hello, world!")
+	p.Publish("hello, golang!")
+
+	go func() {
+		for msg := range all {
+			println("all", msg.(string))
+		}
+	}()
+
+	go func() {
+		for msg := range golang {
+			println("golang", msg.(string))
+		}
+	}()
+
+	time.Sleep(time.Second*3)
 }
