@@ -1,9 +1,8 @@
 package main
 
 import (
-	"github.com/CoderSamYhc/learngo/day_3/ops"
-	"strings"
-	"time"
+	"fmt"
+	"github.com/shopspring/decimal"
 )
 
 func main() {
@@ -87,32 +86,52 @@ func main() {
 
 	//day_3.TestFunc3()
 
-	p := ops.NewPublisher(100*time.Millisecond, 10)
+	//p := ops.NewPublisher(100*time.Millisecond, 10)
+	//
+	//defer p.Close()
+	//
+	//all := p.Subscriber()
+	//golang := p.SubscriberTopic(func(v interface{}) bool {
+	//	if s, ok := v.(string); ok {
+	//		return strings.Contains(s, "golang")
+	//	}
+	//	return false
+	//})
+	//
+	//p.Publish("hello, world!")
+	//p.Publish("hello, golang!")
+	//
+	//go func() {
+	//	for msg := range all {
+	//		println("all", msg.(string))
+	//	}
+	//}()
+	//
+	//go func() {
+	//	for msg := range golang {
+	//		println("golang", msg.(string))
+	//	}
+	//}()
+	//
+	//time.Sleep(time.Second*3)
 
-	defer p.Close()
+	//s := []string{"aa", "bb", "cc"}
+	//wg := sync.WaitGroup{}
+	//for _,name := range s {
+	//	wg.Add(1)
+	//	go func() {
+	//		fmt.Println(name)
+	//		wg.Done()
+	//	}()
+	//}
+	//wg.Wait()
 
-	all := p.Subscriber()
-	golang := p.SubscriberTopic(func(v interface{}) bool {
-		if s, ok := v.(string); ok {
-			return strings.Contains(s, "golang")
-		}
-		return false
-	})
+	x := 9.8351
+	//y := 9.8431
+	//
+	//fmt.Println(math.Floor(x + 0.5))
+	//fmt.Println(math.Floor(y + 0.5))
 
-	p.Publish("hello, world!")
-	p.Publish("hello, golang!")
-
-	go func() {
-		for msg := range all {
-			println("all", msg.(string))
-		}
-	}()
-
-	go func() {
-		for msg := range golang {
-			println("golang", msg.(string))
-		}
-	}()
-
-	time.Sleep(time.Second*3)
+	v1, _ :=decimal.NewFromFloat(x).Round(2).Float64()
+	fmt.Println(v1)
 }

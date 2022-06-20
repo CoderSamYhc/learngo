@@ -42,4 +42,23 @@
   - 2、无论收发，nil管道都会阻塞
   - 3、重复关闭管道或关闭nil管道会引发panic
   - 4、单向管道不能逆向操作，也不能转换
-  - 5、接收管道不能close  
+  - 5、接收管道不能close
+
+## DAY4
+
+- [X] 性能测试
+  - -benchmem（性能测试的时候显示测试函数的内存分配的统计信息，等价于在基准测试中调用b.ReportAllocs()）
+  - -count=n（运行多少次，默认1次）
+  - -timeout=t（超时时间，超过会panic，默认10分钟）
+  - -cpu=x,y（指定GOMAXPROCS，可以通过,传入一个列表）
+  - -benchtime=ns（指定执行时间(e.g. 2s)或具体次数(e.g. 10x)）
+  - -cpuprofile=filename.out（输出cpu性能文件）
+  - -memprofile=filename.out（输出mem内存性能文件）
+  - ![](./img/bench_test.png)
+  - BenchmarkFf-2（BenchmarkFf表示测试函数名 -2表示线程数）
+  - 2794164（执行总次数）
+  - 1279 ns/op（表示平均每次操作花费了1222纳秒）
+  - 392 B/op（表示每次操作申请了392Byte的内存申请）
+  - 21 allocs/op（表示每次操作申请了21次内存）
+  
+  
