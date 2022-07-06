@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option go_package = "./protoes";
+
+package protoes;
+
+service HelloServer{
+  rpc SayHi(HelloRequest) returns(HelloReplay) {}
+  rpc GetMsg(HelloRequest) returns(HelloMessage) {}
+}
+// required：表示该字段有且只有1个，在3.0中该修饰符被移除
+// optional：表示该字段可以是0或1个，后面可加default默认值，如果不加，使用默认值
+// repeated：表示该字段可以是0到多个，packed=true 代表使用高效编码格式
+message HelloRequest {
+  string name=1;
+}
+
+message HelloReplay{
+  string message = 1;
+}
+
+message HelloMessage{
+  string msg=1;
+}
+

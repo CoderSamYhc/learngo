@@ -35,3 +35,4 @@ func (a *Array) Each(arr []int) {
 	}
 
 }
+
