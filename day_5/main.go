@@ -9,7 +9,6 @@ import (
 func main()  {
 	helloRq := protoes.HelloRequest{
 		Name: *proto.String("lisi"),
-		Height: *proto.Int64(182),
 	}
 
 	data, err := proto.Marshal(&helloRq)
@@ -28,5 +27,4 @@ func main()  {
 	}
 
 	fmt.Println(list.GetName())
-	fmt.Println(list.GetHeight())
 }
