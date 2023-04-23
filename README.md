@@ -54,7 +54,7 @@
   - -benchtime=ns（指定执行时间(e.g. 2s)或具体次数(e.g. 10x)）
   - -cpuprofile=filename.out（输出cpu性能文件）
   - -memprofile=filename.out（输出mem内存性能文件）
-  - ![](./img/bench_test.png)
+  - ![bench_test](./img/bench_test.png)
   - BenchmarkFf-2（BenchmarkFf表示测试函数名 -2表示线程数）
   - 2794164（执行总次数）
   - 1279 ns/op（表示平均每次操作花费了1222纳秒）
@@ -62,7 +62,10 @@
   - 21 allocs/op（表示每次操作申请了21次内存）
   
 ## DAY5
-- [X] protobuf
+- [X] go和protobuf
+- [X] go和grpc
 
+## DAY6
+- [X] go和rpc
   
   
